@@ -1,0 +1,20 @@
+.vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: none; /* Hide by default */
+}
+
+.horizontal-text {
+    display: block; /* Show by default */
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .vertical-text {
+        display: block; /* Show on larger screens */
+    }
+
+    .horizontal-text {
+        display: none; /* Hide on larger screens */
+    }
+}
