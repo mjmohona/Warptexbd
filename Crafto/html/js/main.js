@@ -3523,6 +3523,7 @@
     }
     $(window).scroll(function () {
         scrollIndicator();
+        console.log("Scrolling");
     });
 
     /* ===================================

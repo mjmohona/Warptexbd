@@ -32,9 +32,10 @@ Table of contents
 ====================================== */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
   --alt-font: "Plus Jakarta Sans", sans-serif;
-  --primary-font: "Inter", sans-serif;
+  --primary-font: "Poppins", serif;
 }
 /* ===================================
     02. CSS color variable
@@ -646,6 +647,7 @@ b, strong {
 }
 /* Text gradient color */
 .text-gradient-blue-magenta-orange, .text-gradient-light-gray-white, .text-gradient-light-purple-light-orange, .text-gradient-sky-blue-pink, .text-gradient-light-blue-light-turquoise, .text-gradient-fast-blue-purple-light-orange, .text-gradient-light-pink-light-purple, .text-gradient-fast-blue-purple, .text-gradient-pink-orange, .text-gradient-fast-pink-light-yellow, .text-gradient-purple-pink, .text-gradient-light-pink-light-orange {
+  background-image: linear-gradient(to right, #e97522 0%, #1ea3b1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -674,7 +676,9 @@ b, strong {
   background-image: linear-gradient(to right, #18cdbb, #22d2ae, #3cd69d, #57da89, #73dc73);
 }
 .text-gradient-sky-blue-pink {
-  background-image: linear-gradient(to right, #556fff, #556fff, #e05fc4, #f767a6, #ff798e);
+  background-image: linear-gradient(to right, #e97522 0%, #1ea3b1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .text-gradient-light-purple-light-orange {
   background-image: linear-gradient(to right, #b783ff, #b783ff, #fa7cc1, #ff85a6, #ff9393);
@@ -2936,7 +2940,7 @@ input:focus, select:focus, textarea:focus, .form-control:focus {
   mix-blend-mode: difference;
 }
 .scroll-progress.visible {
-  opacity: 1;
+  opacity: 100;
   visibility: visible;
 }
 .scroll-progress .scroll-top {
