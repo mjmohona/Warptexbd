@@ -28,3 +28,19 @@ window.addEventListener('scroll', function () {
     scrollIndicator();
     console.log("Scrolling");
 });
+
+
+const mouseButton = document.querySelector('#mouse-button')
+const aboutSection = document.querySelector('#about-section')
+
+mouseButton.style.cursor = "pointer";
+
+if(mouseButton) {
+    mouseButton.addEventListener('click', function() {
+        aboutSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'nearest'
+        });
+    })
+}

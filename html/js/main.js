@@ -75,6 +75,12 @@
     setBottomOverLayerPosition(2000);
     setupSwiper();
 
+
+
+    //swiper.on('reachEnd', function(){
+     //   console.log("reach to End");
+    //});
+
     /* ===================================
      Header
      ====================================== */
@@ -1898,6 +1904,7 @@
                     var swiperObj = instagramWrapperItem.parentElement;
                     if (typeof Swiper === 'function') {
                         new Swiper(swiperObj, sliderOptions);
+                        debugger
                     }
                 } else {
                     // Apply isotope
@@ -2525,6 +2532,8 @@
     // Setup swiper slider
     function setupSwiper() {
 
+
+
         // Swiper slider using params
         var swipers = document.querySelectorAll('[data-slider-options]:not(.instafeed-wrapper)');
         swipers.forEach(function (swiperItem) {
@@ -2773,6 +2782,20 @@
                 if (typeof Swiper === 'function') {
                     _this.imagesLoaded(function () {
                         var swiperObj = new Swiper(swiperItem, sliderOptions);
+                        swiperObj.on('reachEnd', function(){
+                            
+                            // document.addEventListener('wheel', function(event) {
+                            //     const aboutSection = document.querySelector('#about-section')
+                            //     if(event.deltaY > 100) {
+                            //         aboutSection.scrollIntoView({
+                            //             behavior: 'smooth',
+                            //             block: 'center',
+                            //             inline: 'nearest'
+                            //         });
+                            //     }
+                            // })
+                        });
+                        debugger;
                         swiperObjs.push(swiperObj);
                     });
                 }
