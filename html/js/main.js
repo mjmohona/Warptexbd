@@ -2780,14 +2780,34 @@
 
                 if (typeof Swiper === 'function') {
                     _this.imagesLoaded(function () {
+                        let swiperInView = false;
                         var swiperObj = new Swiper(swiperItem, sliderOptions);
-                        console.log(swiperItem.id)
+                        const observer = new IntersectionObserver((entries, observer) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    // The Swiper is in the viewport
+                                    swiperInView = true
+                                    // You can also trigger any swiper actions or methods here if needed
+                                    // Example: swiperObj.update(); // if you need to force Swiper to update
+                                } else {
+                                    // The Swiper is out of the viewport
+                                    swiperInView = false
+                                }
+                            });
+                        }, {
+                            root: null, // Use the viewport as the root
+                            threshold: 0.1 // Trigger when 10% of the swiper is in view (you can adjust as needed)
+                        });
+
+                        // Observe the swiper element
+                        observer.observe(swiperItem);
                         if(swiperItem.id === 'vertical-swiper') {
                         swiperObj.on('reachEnd', function(){
                             function onWheel(event) {
+                                if(!swiperInView) return
                                 setTimeout(function() {
                                     const aboutSection = document.querySelector('#about-section');
-                                    if (event.deltaY > 0) { // Check for downward scroll
+                                    if (event.deltaY > 0 && swiperObj.activeIndex == 2) { // Check for downward scroll
                                         aboutSection.scrollIntoView({
                                             behavior: 'smooth',
                                             block: 'center',
