@@ -1904,7 +1904,6 @@
                     var swiperObj = instagramWrapperItem.parentElement;
                     if (typeof Swiper === 'function') {
                         new Swiper(swiperObj, sliderOptions);
-                        debugger
                     }
                 } else {
                     // Apply isotope
@@ -2782,20 +2781,27 @@
                 if (typeof Swiper === 'function') {
                     _this.imagesLoaded(function () {
                         var swiperObj = new Swiper(swiperItem, sliderOptions);
+                        console.log(swiperItem.id)
+                        if(swiperItem.id === 'vertical-swiper') {
                         swiperObj.on('reachEnd', function(){
-                            
-                            // document.addEventListener('wheel', function(event) {
-                            //     const aboutSection = document.querySelector('#about-section')
-                            //     if(event.deltaY > 100) {
-                            //         aboutSection.scrollIntoView({
-                            //             behavior: 'smooth',
-                            //             block: 'center',
-                            //             inline: 'nearest'
-                            //         });
-                            //     }
-                            // })
-                        });
-                        debugger;
+                            function onWheel(event) {
+                                setTimeout(function() {
+                                    const aboutSection = document.querySelector('#about-section');
+                                    if (event.deltaY > 0) { // Check for downward scroll
+                                        aboutSection.scrollIntoView({
+                                            behavior: 'smooth',
+                                            block: 'center',
+                                            inline: 'nearest'
+                                        });
+                                        // Remove the event listener after triggering the scroll
+                                        document.removeEventListener('wheel', onWheel);
+                                    }
+                                }, 1500)
+                            }
+
+                            // Add the event listener inside the reachEnd callback
+                            document.addEventListener('wheel', onWheel);
+                        })};
                         swiperObjs.push(swiperObj);
                     });
                 }
