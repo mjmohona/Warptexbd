@@ -30,17 +30,16 @@ window.addEventListener('scroll', function () {
 });
 
 
-const mouseButton = document.querySelector('#mouse-button')
-const aboutSection = document.querySelector('#about-section')
-
-mouseButton.style.cursor = "pointer";
-
-if(mouseButton) {
-    mouseButton.addEventListener('click', function() {
-        aboutSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-            inline: 'nearest'
-        });
-    })
-}
+document.querySelectorAll('.scroll-trigger').forEach(trigger => {
+    trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1); // Get the ID without `#`
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth', // Smooth scrolling
+                block: 'start', // Align the section to the top of the viewport
+            });
+        }
+    });
+});
