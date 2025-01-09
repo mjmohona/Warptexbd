@@ -1,17 +1,19 @@
 /* ===================================
     Crafto - Vertical portfolio
 ====================================== */
-/* font */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;300;400;500;600;700;800;900&display=swap');
+/*01. Google font*/
+/*====================================== *!*/
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* variable */
 :root {
-    --base-color: #deba27;
-    --alt-font: 'Bebas Neue', cursive;
-    --primary-font: 'Albert Sans', sans-serif;
-    --medium-gray: #7c8983;
-    --dark-gray: #172c23;
+    --base-color: #DEBA27FF;
+    --alt-font: "Plus Jakarta Sans", sans-serif;
+    --primary-font: "Poppins", serif;
+    --dark-gray: #252840;
+    --medium-gray: #868d98;
 }
 /* reset */
 /*body{*/
