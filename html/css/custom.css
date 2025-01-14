@@ -54,3 +54,37 @@
 /*    -webkit-text-fill-color: transparent;*/
 /*    position: absolute;*/
 /*}*/
+
+.career-banner {
+    background: linear-gradient(to right, #e97522 0%, #1ea3b1 100%), url('images/warptexbd/home_about.jpg') no-repeat center center;
+    background-size: cover;
+    height: 60vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.career-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.career-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.apply-now-btn {
+    background-image: linear-gradient(to right, #e97522 0%, #1ea3b1 100%);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.apply-now-btn:hover {
+    background: linear-gradient(90deg, #ff758c, #ff7eb3);
+}
